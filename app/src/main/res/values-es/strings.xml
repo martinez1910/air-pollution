@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Calidad del aire en Gijón</string>
+
+    <string name="button">Actualizar</string>
+
+    <!-- AirStationTypeX toString() -->
+    <string name="station">Estación</string>
+    <string name="title">Nombre</string>
+    <string name="latitude">Latitud</string>
+    <string name="longitude">Longitud</string>
+    <string name="date">Fecha</string>
+    <string name="so2">Dióxido de azufre (SO2)</string>
+    <string name="no">Monóxido de nitrógeno (NO)</string>
+    <string name="no2">Dióxido de nitrógeno (NO2)</string>
+    <string name="co">Monóxido de carbono (CO)</string>
+    <string name="pm10">Partículas en suspensión menores de 10 µm</string>
+    <string name="o3">Ozono (O3)</string>
+    <string name="dd">dd</string>
+    <string name="vv">vv</string>
+    <string name="tmp">Temperatura</string>
+    <string name="hr">Humedad Relativa</string>
+    <string name="prb">Presión</string>
+    <string name="rs">rs</string>
+    <string name="ll">ll</string>
+    <string name="ben">Benceno (C6H6)</string>
+    <string name="tol">Tolueno (C7H8)</string>
+    <string name="mxil">Meta-xileno (C8H10)</string>
+    <string name="pm25">Partículas en suspensión menores de 2,5 µm</string>
+    <string name="voc_separator">Compuestos orgánicos volátiles (liberados por la quema de combustibles)</string>
+    <string name="text_before_time">a las</string>
+</resources>

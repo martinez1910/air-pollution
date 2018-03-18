@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Air Pollution Gijón</string>
+
+    <string name="button">Update</string>
+
+    <string name="toast_updating">Retrieving latest hour data...</string>
+
+    <!-- AirStationTypeX toString() -->
+    <string name="station">Station</string>
+    <string name="title">Name</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="date">Date</string>
+    <string name="so2">Sulfur dioxide (SO2)</string>
+    <string name="no">Nitrogen monoxide (NO)</string>
+    <string name="no2">Nitrogen dioxide (NO2)</string>
+    <string name="co">Carbon monoxide (CO)</string>
+    <string name="pm10">Suspended particles smaller than 10 µm</string>
+    <string name="o3">Ozone (O3)</string>
+    <string name="dd">dd</string>
+    <string name="vv">vv</string>
+    <string name="tmp">Temperature</string>
+    <string name="hr">Relative Humidity</string>
+    <string name="prb">Pressure</string>
+    <string name="rs">rs</string>
+    <string name="ll">ll</string>
+    <string name="ben">Benzene (C6H6)</string>
+    <string name="tol">Toluene (C7H8)</string>
+    <string name="mxil">Meta-xylene (C8H10)</string>
+    <string name="pm25">Suspended particles smaller than 2,5 µm</string>
+    <string name="voc_separator">Volatile organic compounds (from fuel burning)</string>
+    <string name="text_before_time">at</string>
+    <string name="unit_micro">μg/m³</string>
+    <string name="unit_milli">mg/m³</string>
+    <string name="temperature_unit">ºC</string>
+    <string name="humidity_unit">%</string>
+    <string name="pressure_unit">hPa</string>
+
+</resources>
