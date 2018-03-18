@@ -30,4 +30,5 @@
     <string name="pm25">Partículas en suspensión menores de 2,5 µm</string>
     <string name="voc_separator">Compuestos orgánicos volátiles (liberados por la quema de combustibles)</string>
     <string name="text_before_time">a las</string>
+    <string name="no_data">Sin Datos</string>
 </resources>

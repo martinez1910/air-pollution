@@ -35,5 +35,6 @@
     <string name="temperature_unit">ºC</string>
     <string name="humidity_unit">%</string>
     <string name="pressure_unit">hPa</string>
+    <string name="no_data">No Data</string>
 
 </resources>
