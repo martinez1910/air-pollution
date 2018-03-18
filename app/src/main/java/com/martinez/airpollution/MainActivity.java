@@ -32,7 +32,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<AirStation> airStations = new ArrayList<AirStation>();
+    ArrayList<AirStation> airStations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String str){
             try {
+                airStations = new ArrayList<AirStation>();
                 str = Html.fromHtml(str).toString();
                 JSONObject jsonObject = new JSONObject(str);
                 JSONArray jsonArray = jsonObject.getJSONObject("calidadairemediatemporales").getJSONArray("calidadairemediatemporal");
