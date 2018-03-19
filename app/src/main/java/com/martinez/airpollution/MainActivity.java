@@ -57,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
         new Communicator().execute("http://opendata.gijon.es/descargar.php?id=1&tipo=JSON");
     }
 
+    //Remove onButtonClick() when this is implemented
+    public void onImageClick(View w){
+
+    }
+
 
     private class Communicator extends AsyncTask<String, Void, String>{
 

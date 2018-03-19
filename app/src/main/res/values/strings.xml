@@ -37,4 +37,12 @@
     <string name="pressure_unit">hPa</string>
     <string name="no_data">No Data</string>
 
+
+    <string name="station_avenida_constitucion">Avenida Constitución</string>
+    <string name="station_avenida_argentina">Avenida Argentina</string>
+    <string name="station_montevil">Montevil</string>
+    <string name="station_hermanos_felgueroso">Hermanos Felgueroso</string>
+    <string name="station_avenida_castilla">Avenida Castilla</string>
+    <string name="station_santa_barbara">Santa Bárbara</string>
+    <string name="icon_copyright">Icon made by Vaadin from www.flaticon.com/authors/vaadin</string>
 </resources>
