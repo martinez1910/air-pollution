@@ -6,10 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
-import com.martinez.airpollution.airsations.AirStation;
+import com.martinez.airpollution.logic.AirStation;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,24 +33,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onImageClick(View w){
+        Intent intent;
         switch (w.getId()){
             case R.id.imageViewCircleAvdaConstitucion:
-                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(0)));
+                intent = new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(0));
+                intent.putExtra("name", getString(R.string.station_avenida_constitucion));
+                intent.putExtra("pictureId", R.drawable.ic_station_avda_constitucion);
+                startActivity(intent);
                 break;
             case R.id.imageViewCircleAvdaArgentina:
-                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(1)));
+                intent = new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(1));
+                intent.putExtra("name", getString(R.string.station_avenida_argentina));
+                intent.putExtra("pictureId", R.drawable.ic_station_avda_argentina);
+                startActivity(intent);
                 break;
             case R.id.imageViewCircleMontevil:
-                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(2)));
+                intent = new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(2));
+                intent.putExtra("name", getString(R.string.station_montevil));
+                intent.putExtra("pictureId", R.drawable.ic_station_montevil);
+                startActivity(intent);
                 break;
             case R.id.imageViewCircleHermanosFelgueroso:
-                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(3)));
+                intent =new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(3));
+                intent.putExtra("name", getString(R.string.station_hermanos_felgueroso));
+                intent.putExtra("pictureId", R.drawable.ic_station_hermanos_felgueroso);
+                startActivity(intent);
                 break;
             case R.id.imageViewCircleAvdaCastilla:
-                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(4)));
+                intent = new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(4));
+                intent.putExtra("name", getString(R.string.station_avenida_castilla));
+                intent.putExtra("pictureId", R.drawable.ic_station_avda_castilla);
+                startActivity(intent);
                 break;
             case R.id.imageViewCircleSantaBarbara:
-                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(5)));
+                intent = new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(5));
+                intent.putExtra("name", getString(R.string.station_santa_barbara));
+                intent.putExtra("pictureId", R.drawable.ic_station_santa_barbara);
+                startActivity(intent);
                 break;
 
         }

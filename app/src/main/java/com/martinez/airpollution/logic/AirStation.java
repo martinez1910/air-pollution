@@ -1,16 +1,9 @@
-package com.martinez.airpollution.airsations;
-
-import android.content.Context;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import com.martinez.airpollution.R;
+package com.martinez.airpollution.logic;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
 
 public class AirStation implements Serializable{
     private Integer estacion;
@@ -24,7 +17,6 @@ public class AirStation implements Serializable{
             this.latitud = jsonObject.getDouble("latitud");
             this.longitud = jsonObject.getDouble("longitud");
             this.fechasolar_utc_ = jsonObject.getString("fechasolar_utc_");
-            this.longitud = jsonObject.getDouble("longitud");
             this.so2 = jsonObject.getDouble("so2");
             this.no = jsonObject.getDouble("no");
             this.no2 = jsonObject.getDouble("no2");
@@ -47,23 +39,8 @@ public class AirStation implements Serializable{
         }
     }
 
-    /*Move this method to StationActivity
-    private String formatDate(String date){
-        try{
-            String year = date.substring(0, 4);
-            String month = date.substring(5, 7);
-            String day = date.substring(8, 10);
-            String hour = date.substring(11, 13);
-            String minute = date.substring(14, 16);
-            String second = date.substring(17, 19);
-
-            return day +"/" +month +"/" +year + " " +context.getString(R.string.text_before_time) +" " +hour +":" +minute +":" +second;
-        }catch(IndexOutOfBoundsException e){
-            return date;
-        }
-    }*/
-
-    public Integer getEstacion() {        return estacion;
+    public Integer getEstacion() {
+        return estacion;
     }
 
     public String getTitulo() {

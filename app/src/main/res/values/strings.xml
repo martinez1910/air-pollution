@@ -38,6 +38,7 @@
     <string name="no_data">No Data</string>
 
 
+    <!-- Main -->
     <string name="station_avenida_constitucion">Avenida Constitución</string>
     <string name="station_avenida_argentina">Avenida Argentina</string>
     <string name="station_montevil">Montevil</string>
@@ -46,4 +47,16 @@
     <string name="station_santa_barbara">Santa Bárbara</string>
     <string name="icon_copyright">Icon made by Vaadin from www.flaticon.com/authors/vaadin</string>
     <string name="toast_loading">Loading...</string>
+
+    <!-- Station -->
+    <string name="air_quality">Air Quality</string>
+    <string name="air_quality_good">Good</string>
+    <string name="air_quality_poor">Poor</string>
+    <string name="air_quality_bad">Bad</string>
+    <string name="air_quality_unknown">Unknown</string>
+
+    <string name="localization">Localization</string>
+    <string name="localization_message">Press here to see it in Google Maps</string>
+
+
 </resources>
