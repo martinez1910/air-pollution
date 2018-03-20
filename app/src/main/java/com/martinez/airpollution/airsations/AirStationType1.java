@@ -1,11 +1,10 @@
 package com.martinez.airpollution.airsations;
 
 import android.content.Context;
-
 import com.martinez.airpollution.MainActivity;
 import com.martinez.airpollution.R;
 
-public class AirStationType1 extends AirStation {
+public class AirStationType1 extends AirStation{
 
     private int so2, no, no2, o3, dd, hr, prb, rs, ll;
     private double co, vv, tmp, ben, tol, mxil;

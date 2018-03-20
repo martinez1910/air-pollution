@@ -26,6 +26,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -39,9 +40,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addListeners();
+        //addListeners();REMOVE
+
+        getAirStationsData();
     }
 
+    /*REMOVE
     private void addListeners(){
         ((ListView) findViewById(R.id.listView)).setOnItemClickListener(
                 new AdapterView.OnItemClickListener(){
@@ -50,16 +54,45 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-    }
+    }*/
 
+    /*REMOVE
     public void onButtonClick(View w){
         Toast.makeText(this.getApplicationContext(), getString(R.string.toast_updating), Toast.LENGTH_LONG).show();
         new Communicator().execute("http://opendata.gijon.es/descargar.php?id=1&tipo=JSON");
-    }
+    }*/
 
     //Remove onButtonClick() when this is implemented
     public void onImageClick(View w){
+        //if info already parsed show data, wait (and show loading gif) otherwise.
+//        while(airStations.size() == 0 || airStations.get(airStations.size()-1) == null) //avoids race condition but may loop forever(?)[Check if that's right]
+//            Toast.makeText(this, R.string.toast_loading, Toast.LENGTH_LONG).show(); //Too much toast in my jam
 
+        switch (w.getId()){
+            case R.id.imageViewCircleAvdaConstitucion:
+                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(0)));
+                break;
+            case R.id.imageViewCircleAvdaArgentina:
+                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(1)));
+                break;
+            case R.id.imageViewCircleMontevil:
+                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(2)));
+                break;
+            case R.id.imageViewCircleHermanosFelgueroso:
+                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(3)));
+                break;
+            case R.id.imageViewCircleAvdaCastilla:
+                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(4)));
+                break;
+            case R.id.imageViewCircleSantaBarbara:
+                startActivity(new Intent(this, StationActivity.class).putExtra("airStation", airStations.get(5)));
+                break;
+
+        }
+    }
+
+    private void getAirStationsData(){
+        new Communicator().execute("http://opendata.gijon.es/descargar.php?id=1&tipo=JSON");
     }
 
 
@@ -67,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
+            airStations = new ArrayList<AirStation>();
             String str = "";
             try {
                 URLConnection connection = new URL(strings[0]).openConnection();
@@ -83,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String str){
             try {
-                airStations = new ArrayList<AirStation>();
                 str = Html.fromHtml(str).toString();
                 JSONObject jsonObject = new JSONObject(str);
                 JSONArray jsonArray = jsonObject.getJSONObject("calidadairemediatemporales").getJSONArray("calidadairemediatemporal");
@@ -95,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                     airStations.add(airStation);
                     counter++;
                 }
-                loadData();
+                loadData(); //REMOVE
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -126,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
+        //REMOVE
         private void loadData(){
             AirStation[] data = new AirStation[airStations.size()];
             for (int i = 0; i < data.length; i++)

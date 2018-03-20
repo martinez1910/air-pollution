@@ -1,15 +1,18 @@
 package com.martinez.airpollution.airsations;
 
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.martinez.airpollution.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 
-public abstract class AirStation {
+public abstract class AirStation implements Serializable{
     protected Context context;
     private int estacion;
     private String titulo, fechasolar_utc_, pm10, pm25;
@@ -25,6 +28,7 @@ public abstract class AirStation {
         this.pm10 = pm10;
         this.pm25 = pm25;
     }
+
 
     protected String formatDate(String date){
         String year = date.substring(0, 4);

@@ -31,14 +31,14 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageViewPictureAvdaConstitucion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_station_avda_constitucion" />
 
                     <ImageView
-                        android:id="@+id/imageView9"
+                        android:id="@+id/imageViewPictureAvdaArgentina"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -51,7 +51,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/imageViewCircleAvdaConstitucion"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
@@ -60,7 +60,7 @@
                         app:srcCompat="@drawable/ic_circle_red" />
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/imageViewCircleAvdaArgentina"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
@@ -119,14 +119,14 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView10"
+                        android:id="@+id/imageViewPictureMontevil"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_station_montevil" />
 
                     <ImageView
-                        android:id="@+id/imageView11"
+                        android:id="@+id/imageViewPictureHermanosFelgueroso"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
@@ -140,7 +140,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/imageViewCircleMontevil"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
@@ -149,13 +149,14 @@
                         app:srcCompat="@drawable/ic_circle_red" />
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/imageViewCircleHermanosFelgueroso"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:onClick="onImageClick"
                         app:srcCompat="@drawable/ic_circle_red" />
+
                 </LinearLayout>
 
             </RelativeLayout>
@@ -206,14 +207,14 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView12"
+                        android:id="@+id/imageViewPictureAvdaCastilla"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_station_avda_castilla" />
 
                     <ImageView
-                        android:id="@+id/imageView13"
+                        android:id="@+id/imageViewPictureSantaBarbara"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
@@ -226,7 +227,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/imageViewCircleAvdaCastilla"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
@@ -235,7 +236,7 @@
                         app:srcCompat="@drawable/ic_circle_red" />
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/imageViewCircleSantaBarbara"
                         android:layout_width="wrap_content"
                         android:layout_height="100dp"
                         android:layout_weight="1"
@@ -275,14 +276,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:onClick="onButtonClick"
-            android:text="@string/button" />
 
         <ListView
             android:id="@+id/listView"

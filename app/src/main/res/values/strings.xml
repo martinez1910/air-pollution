@@ -45,4 +45,5 @@
     <string name="station_avenida_castilla">Avenida Castilla</string>
     <string name="station_santa_barbara">Santa Bárbara</string>
     <string name="icon_copyright">Icon made by Vaadin from www.flaticon.com/authors/vaadin</string>
+    <string name="toast_loading">Loading...</string>
 </resources>
