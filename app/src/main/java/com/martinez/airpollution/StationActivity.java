@@ -33,32 +33,6 @@ public class StationActivity extends AppCompatActivity {
 
 
     private void loadData(){
-        /*switch(airStation.getEstacion()){
-            case 1:
-                ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(R.drawable.ic_station_avda_constitucion);
-                ((TextView) findViewById(R.id.textViewStationName)).setText(getString(R.string.station_avenida_constitucion));
-                break;
-            case 2:
-                ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(R.drawable.ic_station_avda_argentina);
-                ((TextView) findViewById(R.id.textViewStationName)).setText(getString(R.string.station_avenida_constitucion));
-                break;
-            case 10:
-                ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(R.drawable.ic_station_montevil);
-                ((TextView) findViewById(R.id.textViewStationName)).setText(getString(R.string.station_avenida_constitucion));
-                break;
-            case 3:
-                ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(R.drawable.ic_station_hermanos_felgueroso);
-                ((TextView) findViewById(R.id.textViewStationName)).setText(getString(R.string.station_avenida_constitucion));
-                break;
-            case 4:
-                ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(R.drawable.ic_station_avda_castilla);
-                ((TextView) findViewById(R.id.textViewStationName)).setText(getString(R.string.station_avenida_constitucion));
-                break;
-            case 11:
-                ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(R.drawable.ic_station_santa_barbara);
-                ((TextView) findViewById(R.id.textViewStationName)).setText(getString(R.string.station_avenida_constitucion));
-                break;
-        }*/
         ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(getIntent().getIntExtra("pictureId", -1));
         ((TextView) findViewById(R.id.textViewStationName)).setText(getIntent().getStringExtra("name"));
         ((TextView) findViewById(R.id.textViewAirQuality)).setText(getString(R.string.air_quality)+": " +getAverageAirQuality());
@@ -66,41 +40,44 @@ public class StationActivity extends AppCompatActivity {
         List<Property> properties = new ArrayList<Property>();
         properties.add(new Property(getString(R.string.date), formatDate(airStation.getFechasolar_utc_())));
         properties.add(new Property(getString(R.string.localization), getString(R.string.localization_message)));
-        if(airStation.getTmp() != null)
+        if(!Double.isNaN(airStation.getTmp()))
             properties.add(new Property(getString(R.string.tmp), airStation.getTmp().toString()));
-        if(airStation.getHr() != null)
+        if(!Double.isNaN(airStation.getHr()))
             properties.add(new Property(getString(R.string.hr), airStation.getHr().toString()));
-        if(airStation.getPrb() != null)
+        if(!Double.isNaN(airStation.getPrb()))
             properties.add(new Property(getString(R.string.prb), airStation.getPrb().toString()));
-        if(airStation.getPm10() != null)
+        if(!airStation.getPm10().equals(""))
             properties.add(new Property(getString(R.string.pm10), airStation.getPm10()));
-        if(airStation.getPm25() != null)
+        if(!airStation.getPm25().equals(""))
             properties.add(new Property(getString(R.string.pm25), airStation.getPm25()));
-        if(airStation.getSo2() != null)
+        if(!Double.isNaN(airStation.getSo2()))
             properties.add(new Property(getString(R.string.so2), airStation.getSo2().toString()));
-        if(airStation.getNo() != null)
+        if(!Double.isNaN(airStation.getNo()))
             properties.add(new Property(getString(R.string.no), airStation.getNo().toString()));
-        if(airStation.getNo2() != null)
+        if(!Double.isNaN(airStation.getNo2()))
             properties.add(new Property(getString(R.string.no2), airStation.getNo2().toString()));
-        if(airStation.getCo() != null)
+        if(!Double.isNaN(airStation.getCo()))
             properties.add(new Property(getString(R.string.co), airStation.getCo().toString()));
-        if(airStation.getO3() != null)
+        if(!Double.isNaN(airStation.getO3()))
             properties.add(new Property(getString(R.string.o3), airStation.getO3().toString()));
-        if(airStation.getRs() != null)
-            properties.add(new Property(getString(R.string.rs), airStation.getRs().toString()));
-        if(airStation.getBen() != null)
+        if(!Double.isNaN(airStation.getBen()))
             properties.add(new Property(getString(R.string.ben), airStation.getBen().toString()));
-        if(airStation.getTol() != null)
+        if(!Double.isNaN(airStation.getTol()))
             properties.add(new Property(getString(R.string.tol), airStation.getTol().toString()));
-        if(airStation.getMxil() != null)
+        if(!Double.isNaN(airStation.getMxil()))
             properties.add(new Property(getString(R.string.mxil), airStation.getMxil().toString()));
 
-        /*Unknown meaning of this three properties, check Issue#1 in GitHub.
-        properties.add(new Property(getString(R.string.dd), airStation.getDd().toString()));
-        properties.add(new Property(getString(R.string.vv), airStation.getVv().toString()));
-        properties.add(new Property(getString(R.string.ll), airStation.getLl().toString()));
+        /*
+        //Unknown meaning of this three properties, check Issue#1 in GitHub.
+        if(!Double.isNaN(airStation.getRs()))
+            properties.add(new Property(getString(R.string.rs), airStation.getRs().toString()));
+        if(!Double.isNaN(airStation.getDd()))
+            properties.add(new Property(getString(R.string.dd), airStation.getDd().toString()));
+        if(!Double.isNaN(airStation.getVv()))
+            properties.add(new Property(getString(R.string.vv), airStation.getVv().toString()));
+        if(!Double.isNaN(airStation.getLl()))
+            properties.add(new Property(getString(R.string.ll), airStation.getLl().toString()));
         */
-
 
         ListView listView =  findViewById(R.id.listView);
         listView.setAdapter(new StationAdapter(properties, this));

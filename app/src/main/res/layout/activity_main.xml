@@ -57,7 +57,7 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:onClick="onImageClick"
-                        app:srcCompat="@drawable/ic_circle_red" />
+                        app:srcCompat="@drawable/ic_circle_ivory" />
 
                     <ImageView
                         android:id="@+id/imageViewCircleAvdaArgentina"
@@ -66,7 +66,7 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:onClick="onImageClick"
-                        app:srcCompat="@drawable/ic_circle_red" />
+                        app:srcCompat="@drawable/ic_circle_ivory" />
                 </LinearLayout>
 
             </RelativeLayout>
@@ -146,7 +146,7 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:onClick="onImageClick"
-                        app:srcCompat="@drawable/ic_circle_red" />
+                        app:srcCompat="@drawable/ic_circle_ivory" />
 
                     <ImageView
                         android:id="@+id/imageViewCircleHermanosFelgueroso"
@@ -155,7 +155,7 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:onClick="onImageClick"
-                        app:srcCompat="@drawable/ic_circle_red" />
+                        app:srcCompat="@drawable/ic_circle_ivory" />
 
                 </LinearLayout>
 
@@ -233,7 +233,7 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:onClick="onImageClick"
-                        app:srcCompat="@drawable/ic_circle_red" />
+                        app:srcCompat="@drawable/ic_circle_ivory" />
 
                     <ImageView
                         android:id="@+id/imageViewCircleSantaBarbara"
@@ -242,7 +242,7 @@
                         android:layout_weight="1"
                         android:clickable="true"
                         android:onClick="onImageClick"
-                        app:srcCompat="@drawable/ic_circle_red" />
+                        app:srcCompat="@drawable/ic_circle_ivory" />
                 </LinearLayout>
 
             </RelativeLayout>
