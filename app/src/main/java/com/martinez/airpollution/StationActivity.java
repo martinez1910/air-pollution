@@ -1,10 +1,11 @@
 package com.martinez.airpollution;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -12,11 +13,8 @@ import android.widget.TextView;
 import com.martinez.airpollution.logic.AirStation;
 import com.martinez.airpollution.logic.Property;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class StationActivity extends AppCompatActivity {
 
@@ -37,9 +35,9 @@ public class StationActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.textViewStationName)).setText(getIntent().getStringExtra("name"));
         ((TextView) findViewById(R.id.textViewAirQuality)).setText(getString(R.string.air_quality)+": " +getAverageAirQuality());
 
-        List<Property> properties = new ArrayList<Property>();
+        final List<Property> properties = new ArrayList<Property>();
         properties.add(new Property(getString(R.string.date), formatDate(airStation.getFechasolar_utc_())));
-        properties.add(new Property(getString(R.string.localization), getString(R.string.localization_message)));
+        properties.add(new Property(getString(R.string.location), getString(R.string.location_message)));
         if(!Double.isNaN(airStation.getTmp()))
             properties.add(new Property(getString(R.string.tmp), airStation.getTmp().toString() +" " +getString(R.string.temperature_unit)));
         if(!Double.isNaN(airStation.getLl()))
@@ -76,14 +74,21 @@ public class StationActivity extends AppCompatActivity {
             properties.add(new Property(getString(R.string.mxil), airStation.getMxil().toString() +" " +getString(R.string.unit_micro)));
 
 
-        ListView listView =  findViewById(R.id.listView);
+        final ListView listView =  findViewById(R.id.listView);
         listView.setAdapter(new StationAdapter(properties, this));
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, final long id) {
-                //startActivity(new Intent(this, CompoundActivity).......
+                Property property = (Property) listView.getItemAtPosition(position);
+
+                if(property.getId().equals(getString(R.string.location))){
+                    String str = "geo:" +airStation.getLatitud() +", " +airStation.getLongitud()
+                            +"?q=" +airStation.getLatitud() +", " +airStation.getLongitud() +"(" +airStation.getTitulo() +")";
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(str));
+                    view.getContext().startActivity(intent);
+                }
             }
         });
     }

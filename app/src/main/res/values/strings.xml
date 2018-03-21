@@ -60,8 +60,8 @@
     <string name="air_quality_bad">Bad</string>
     <string name="air_quality_unknown">Unknown</string>
 
-    <string name="localization">Localization</string>
-    <string name="localization_message">Press here to see it in Google Maps</string>
+    <string name="location">Location</string>
+    <string name="location_message">Press here to see it in Google Maps</string>
 
     <!-- Wind Direction -->
     <string name="north">N</string>
