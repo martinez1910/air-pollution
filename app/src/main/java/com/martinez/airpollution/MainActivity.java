@@ -79,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
         new Communicator().execute("http://opendata.gijon.es/descargar.php?id=1&tipo=JSON");
     }
 
+    private void removeLoadingView(){
+        findViewById(R.id.loadingLayout).setVisibility(View.GONE);
+        findViewById(R.id.mainLayout).setVisibility(View.VISIBLE);
+    }
+
 
     private class Communicator extends AsyncTask<String, Void, String>{
 
@@ -114,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+            removeLoadingView();
         }
     }
 }
