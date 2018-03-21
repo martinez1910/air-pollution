@@ -3,7 +3,7 @@
 
     <string name="app_name">Calidad del aire en Gijón</string>
 
-    <string name="button">Actualizar</string>
+    <!--<string name="button">Actualizar</string>-->
 
     <!-- AirStationTypeX toString() -->
     <string name="station">Estación</string>
@@ -28,7 +28,22 @@
     <string name="tol">Tolueno (C7H8)</string>
     <string name="mxil">Meta-xileno (C8H10)</string>
     <string name="pm25">Partículas en suspensión menores de 2,5 µm</string>
-    <string name="voc_separator">Compuestos orgánicos volátiles (liberados por la quema de combustibles)</string>
+    <!--<string name="voc_separator">Compuestos orgánicos volátiles (liberados por la quema de combustibles)</string>-->
     <string name="text_before_time">a las</string>
-    <string name="no_data">Sin Datos</string>
+    <!--<string name="no_data">Sin Datos</string>-->
+
+    <!-- Station -->
+    <string name="air_quality">Calidad del Aire</string>
+    <string name="air_quality_good">Buena</string>
+    <string name="air_quality_poor">Media</string>
+    <string name="air_quality_bad">Mala</string>
+    <string name="air_quality_unknown">Desconocida</string>
+
+    <string name="location">Ubicación</string>
+    <string name="location_message">Pulse aquí para verla en Google map</string>
+
+    <!-- Wind Direction -->
+    <string name="south_west">SO</string>
+    <string name="west">O</string>
+    <string name="north_west">NO</string>
 </resources>
