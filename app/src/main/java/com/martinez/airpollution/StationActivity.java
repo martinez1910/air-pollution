@@ -96,9 +96,8 @@ public class StationActivity extends AppCompatActivity {
             String day = date.substring(8, 10);
             String hour = date.substring(11, 13);
             String minute = date.substring(14, 16);
-            String second = date.substring(17, 19);
 
-            return day +"/" +month +"/" +year + " " +getString(R.string.text_before_time) +" " +hour +":" +minute +":" +second;
+            return day +"/" +month +"/" +year + " " +getString(R.string.text_before_time) +" " +hour +":" +minute;
         }catch(IndexOutOfBoundsException e){
             return date;
         }
