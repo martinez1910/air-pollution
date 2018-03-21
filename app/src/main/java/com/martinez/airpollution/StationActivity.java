@@ -41,31 +41,31 @@ public class StationActivity extends AppCompatActivity {
         properties.add(new Property(getString(R.string.date), formatDate(airStation.getFechasolar_utc_())));
         properties.add(new Property(getString(R.string.localization), getString(R.string.localization_message)));
         if(!Double.isNaN(airStation.getTmp()))
-            properties.add(new Property(getString(R.string.tmp), airStation.getTmp().toString()));
+            properties.add(new Property(getString(R.string.tmp), airStation.getTmp().toString() +" " +getString(R.string.temperature_unit)));
         if(!Double.isNaN(airStation.getHr()))
-            properties.add(new Property(getString(R.string.hr), airStation.getHr().toString()));
+            properties.add(new Property(getString(R.string.hr), airStation.getHr().toString() +" " +getString(R.string.humidity_unit)));
         if(!Double.isNaN(airStation.getPrb()))
-            properties.add(new Property(getString(R.string.prb), airStation.getPrb().toString()));
-        if(!airStation.getPm10().equals("null"))
-            properties.add(new Property(getString(R.string.pm10), airStation.getPm10()));
-        if(!airStation.getPm25().equals("null"))
-            properties.add(new Property(getString(R.string.pm25), airStation.getPm25()));
+            properties.add(new Property(getString(R.string.prb), airStation.getPrb().toString() +" " +getString(R.string.pressure_unit)));
+        if(!airStation.getPm10().equals("null") && !airStation.getPm25().isEmpty())
+            properties.add(new Property(getString(R.string.pm10), airStation.getPm10() +" " +getString(R.string.unit_micro)));
+        if(!airStation.getPm25().equals("null") && !airStation.getPm25().isEmpty())
+            properties.add(new Property(getString(R.string.pm25), airStation.getPm25() +" " +getString(R.string.unit_micro)));
         if(!Double.isNaN(airStation.getSo2()))
-            properties.add(new Property(getString(R.string.so2), airStation.getSo2().toString()));
+            properties.add(new Property(getString(R.string.so2), airStation.getSo2().toString() +" " +getString(R.string.unit_micro)));
         if(!Double.isNaN(airStation.getNo()))
-            properties.add(new Property(getString(R.string.no), airStation.getNo().toString()));
+            properties.add(new Property(getString(R.string.no), airStation.getNo().toString() +" " +getString(R.string.unit_micro)));
         if(!Double.isNaN(airStation.getNo2()))
-            properties.add(new Property(getString(R.string.no2), airStation.getNo2().toString()));
+            properties.add(new Property(getString(R.string.no2), airStation.getNo2().toString() +" " +getString(R.string.unit_micro)));
         if(!Double.isNaN(airStation.getCo()))
-            properties.add(new Property(getString(R.string.co), airStation.getCo().toString()));
+            properties.add(new Property(getString(R.string.co), airStation.getCo().toString() +" " +getString(R.string.unit_milli)));
         if(!Double.isNaN(airStation.getO3()))
-            properties.add(new Property(getString(R.string.o3), airStation.getO3().toString()));
+            properties.add(new Property(getString(R.string.o3), airStation.getO3().toString() +" " +getString(R.string.unit_micro)));
         if(!Double.isNaN(airStation.getBen()))
-            properties.add(new Property(getString(R.string.ben), airStation.getBen().toString()));
+            properties.add(new Property(getString(R.string.ben), airStation.getBen().toString() +" " +getString(R.string.unit_micro)));
         if(!Double.isNaN(airStation.getTol()))
-            properties.add(new Property(getString(R.string.tol), airStation.getTol().toString()));
+            properties.add(new Property(getString(R.string.tol), airStation.getTol().toString() +" " +getString(R.string.unit_micro)));
         if(!Double.isNaN(airStation.getMxil()))
-            properties.add(new Property(getString(R.string.mxil), airStation.getMxil().toString()));
+            properties.add(new Property(getString(R.string.mxil), airStation.getMxil().toString() +" " +getString(R.string.unit_micro)));
 
         /*
         //Unknown meaning of this three properties, check Issue#1 in GitHub.
