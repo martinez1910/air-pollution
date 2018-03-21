@@ -46,9 +46,9 @@ public class StationActivity extends AppCompatActivity {
             properties.add(new Property(getString(R.string.hr), airStation.getHr().toString()));
         if(!Double.isNaN(airStation.getPrb()))
             properties.add(new Property(getString(R.string.prb), airStation.getPrb().toString()));
-        if(!airStation.getPm10().equals(""))
+        if(!airStation.getPm10().equals("null"))
             properties.add(new Property(getString(R.string.pm10), airStation.getPm10()));
-        if(!airStation.getPm25().equals(""))
+        if(!airStation.getPm25().equals("null"))
             properties.add(new Property(getString(R.string.pm25), airStation.getPm25()));
         if(!Double.isNaN(airStation.getSo2()))
             properties.add(new Property(getString(R.string.so2), airStation.getSo2().toString()));

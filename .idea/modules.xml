@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AirPollution.iml" filepath="$PROJECT_DIR$/AirPollution.iml" />
       <module fileurl="file://C:\Users\CONECTA\Desktop\AndroidStudioWorkspace\air-pollution\AirPollution.iml" filepath="C:\Users\CONECTA\Desktop\AndroidStudioWorkspace\air-pollution\AirPollution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/air-pollution.iml" filepath="$PROJECT_DIR$/air-pollution.iml" />
       <module fileurl="file://C:\Android\Workspace\AirPollution\air-pollution.iml" filepath="C:\Android\Workspace\AirPollution\air-pollution.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

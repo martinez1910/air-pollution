@@ -108,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
                 for(int i=0; i<jsonArray.length(); i++){
                     if(counter != 0 && airStations.get(counter-1).getEstacion() == jsonArray.getJSONObject(i).getInt("estacion"))//Just add the latest record of each station.
                         continue;
-                    //AirStation airStation = createAirStation(jsonArray.getJSONObject(i));//REMOVE
                     airStations.add(new AirStation(jsonArray.getJSONObject(i)));
                     counter++;
                 }
