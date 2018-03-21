@@ -42,6 +42,14 @@ public class StationActivity extends AppCompatActivity {
         properties.add(new Property(getString(R.string.localization), getString(R.string.localization_message)));
         if(!Double.isNaN(airStation.getTmp()))
             properties.add(new Property(getString(R.string.tmp), airStation.getTmp().toString() +" " +getString(R.string.temperature_unit)));
+        if(!Double.isNaN(airStation.getLl()))
+            properties.add(new Property(getString(R.string.ll), airStation.getLl().toString()+" " +getString(R.string.precipitation_unit)));
+        if(!Double.isNaN(airStation.getDd()))
+            properties.add(new Property(getString(R.string.dd), airStation.getDd().toString()+" " +getString(R.string.wind_direction_unit)));
+        if(!Double.isNaN(airStation.getVv()))
+            properties.add(new Property(getString(R.string.vv), airStation.getVv().toString()+" " +getString(R.string.wind_speed_unit)));
+        if(!Double.isNaN(airStation.getRs()))
+            properties.add(new Property(getString(R.string.rs), airStation.getRs().toString()+" " +getString(R.string.solar_radiation_unit)));
         if(!Double.isNaN(airStation.getHr()))
             properties.add(new Property(getString(R.string.hr), airStation.getHr().toString() +" " +getString(R.string.humidity_unit)));
         if(!Double.isNaN(airStation.getPrb()))
@@ -67,17 +75,6 @@ public class StationActivity extends AppCompatActivity {
         if(!Double.isNaN(airStation.getMxil()))
             properties.add(new Property(getString(R.string.mxil), airStation.getMxil().toString() +" " +getString(R.string.unit_micro)));
 
-        /*
-        //Unknown meaning of this three properties, check Issue#1 in GitHub.
-        if(!Double.isNaN(airStation.getRs()))
-            properties.add(new Property(getString(R.string.rs), airStation.getRs().toString()));
-        if(!Double.isNaN(airStation.getDd()))
-            properties.add(new Property(getString(R.string.dd), airStation.getDd().toString()));
-        if(!Double.isNaN(airStation.getVv()))
-            properties.add(new Property(getString(R.string.vv), airStation.getVv().toString()));
-        if(!Double.isNaN(airStation.getLl()))
-            properties.add(new Property(getString(R.string.ll), airStation.getLl().toString()));
-        */
 
         ListView listView =  findViewById(R.id.listView);
         listView.setAdapter(new StationAdapter(properties, this));

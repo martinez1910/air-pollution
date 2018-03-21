@@ -17,13 +17,13 @@
     <string name="co">Carbon monoxide (CO)</string>
     <string name="pm10">Suspended particles smaller than 10 µm</string>
     <string name="o3">Ozone (O3)</string>
-    <string name="dd">dd</string>
-    <string name="vv">vv</string>
+    <string name="dd">Wind Direction</string>
+    <string name="vv">Wind Speed</string>
     <string name="tmp">Temperature</string>
     <string name="hr">Relative Humidity</string>
     <string name="prb">Pressure</string>
-    <string name="rs">rs</string>
-    <string name="ll">ll</string>
+    <string name="rs">Solar Irradiance</string>
+    <string name="ll">Precipitation</string>
     <string name="ben">Benzene (C6H6)</string>
     <string name="tol">Toluene (C7H8)</string>
     <string name="mxil">Meta-xylene (C8H10)</string>
@@ -35,7 +35,12 @@
     <string name="temperature_unit">ºC</string>
     <string name="humidity_unit">%</string>
     <string name="pressure_unit">hPa</string>
+    <string name="wind_direction_unit">º</string>
+    <string name="wind_speed_unit">m/s</string>
+    <string name="solar_radiation_unit">W/m²</string>
+    <string name="precipitation_unit">l/m²</string>
     <string name="no_data">No Data</string>
+
 
 
     <!-- Main -->

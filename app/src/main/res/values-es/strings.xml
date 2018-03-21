@@ -17,13 +17,13 @@
     <string name="co">Monóxido de carbono (CO)</string>
     <string name="pm10">Partículas en suspensión menores de 10 µm</string>
     <string name="o3">Ozono (O3)</string>
-    <string name="dd">dd</string>
-    <string name="vv">vv</string>
+    <string name="dd">Viento (dirección)</string>
+    <string name="vv">Viento (velocidad)</string>
     <string name="tmp">Temperatura</string>
     <string name="hr">Humedad Relativa</string>
     <string name="prb">Presión</string>
-    <string name="rs">rs</string>
-    <string name="ll">ll</string>
+    <string name="rs">Radiación Solar</string>
+    <string name="ll">Precipitación</string>
     <string name="ben">Benceno (C6H6)</string>
     <string name="tol">Tolueno (C7H8)</string>
     <string name="mxil">Meta-xileno (C8H10)</string>
