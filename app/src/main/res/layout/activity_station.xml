@@ -38,7 +38,7 @@
                     android:id="@+id/imageViewCircle"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    app:srcCompat="@drawable/ic_circle_ivory" />
+                    app:srcCompat="@drawable/ic_circle_unknown" />
             </LinearLayout>
 
         </RelativeLayout>

@@ -78,7 +78,7 @@
                             android:layout_weight="1"
                             android:clickable="true"
                             android:onClick="onImageClick"
-                            app:srcCompat="@drawable/ic_circle_ivory" />
+                            app:srcCompat="@drawable/ic_circle_unknown" />
 
                         <ImageView
                             android:id="@+id/imageViewCircleAvdaArgentina"
@@ -87,7 +87,7 @@
                             android:layout_weight="1"
                             android:clickable="true"
                             android:onClick="onImageClick"
-                            app:srcCompat="@drawable/ic_circle_ivory" />
+                            app:srcCompat="@drawable/ic_circle_unknown" />
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -167,7 +167,7 @@
                             android:layout_weight="1"
                             android:clickable="true"
                             android:onClick="onImageClick"
-                            app:srcCompat="@drawable/ic_circle_ivory" />
+                            app:srcCompat="@drawable/ic_circle_unknown" />
 
                         <ImageView
                             android:id="@+id/imageViewCircleHermanosFelgueroso"
@@ -176,7 +176,7 @@
                             android:layout_weight="1"
                             android:clickable="true"
                             android:onClick="onImageClick"
-                            app:srcCompat="@drawable/ic_circle_ivory" />
+                            app:srcCompat="@drawable/ic_circle_unknown" />
 
                     </LinearLayout>
 
@@ -254,7 +254,7 @@
                             android:layout_weight="1"
                             android:clickable="true"
                             android:onClick="onImageClick"
-                            app:srcCompat="@drawable/ic_circle_ivory" />
+                            app:srcCompat="@drawable/ic_circle_unknown" />
 
                         <ImageView
                             android:id="@+id/imageViewCircleSantaBarbara"
@@ -263,7 +263,7 @@
                             android:layout_weight="1"
                             android:clickable="true"
                             android:onClick="onImageClick"
-                            app:srcCompat="@drawable/ic_circle_ivory" />
+                            app:srcCompat="@drawable/ic_circle_unknown" />
                     </LinearLayout>
 
                 </RelativeLayout>

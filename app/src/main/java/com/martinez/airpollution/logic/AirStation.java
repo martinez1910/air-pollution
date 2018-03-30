@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import java.io.Serializable;
 
 public class AirStation implements Serializable{
+    public enum Quality{UNKNOWN, VERY_GOOD, GOOD, BAD, VERY_BAD}
     private Integer estacion;
     private String titulo, fechasolar_utc_, pm10, pm25;
     private Double latitud, longitud, so2, no, no2, co, o3, dd, vv, tmp, hr, prb, rs, ll, ben, tol, mxil;
@@ -38,6 +39,63 @@ public class AirStation implements Serializable{
             e.printStackTrace();
         }
     }
+
+    public Quality getPm10Quality(){
+        if(pm10.equals("null") || pm10.equals("")) return Quality.UNKNOWN;
+        Double pm10Double = Double.parseDouble(pm10);
+        if(pm10Double < 26) return Quality.VERY_GOOD;
+        if(pm10Double < 51) return Quality.GOOD;
+        if(pm10Double < 76) return Quality.BAD;
+        return Quality.VERY_BAD;
+    }
+
+    public Quality getSo2Quality(){
+        if(so2 == null || so2.isNaN()) return Quality.UNKNOWN;
+        if(so2 < 64) return Quality.VERY_GOOD;
+        if(so2 < 126) return Quality.GOOD;
+        if(so2 < 189) return Quality.BAD;
+        return Quality.VERY_BAD;
+    }
+
+    public Quality getNo2Quality(){
+        if(no2 == null || no2.isNaN()) return Quality.UNKNOWN;
+        if(no2 < 101) return Quality.VERY_GOOD;
+        if(no2 < 201) return Quality.GOOD;
+        if(no2 < 301) return Quality.BAD;
+        return Quality.VERY_BAD;
+    }
+
+    public Quality getCoQuality(){
+        if(co == null || co.isNaN()) return Quality.UNKNOWN;
+        if(co < 6) return Quality.VERY_GOOD;
+        if(co < 11) return Quality.GOOD;
+        if(co < 16) return Quality.BAD;
+        return Quality.VERY_BAD;
+    }
+
+    public Quality getO3Quality(){
+        if(o3 == null || o3.isNaN()) return Quality.UNKNOWN;
+        if(o3 < 61) return Quality.VERY_GOOD;
+        if(o3 < 121) return Quality.GOOD;
+        if(o3 < 181) return Quality.BAD;
+        return Quality.VERY_BAD;
+    }
+
+    public Quality getAverageAirQuality(){
+        Quality max;
+        Quality[] qualities = new Quality[5];
+        qualities[0] = getPm10Quality();
+        qualities[1] = getSo2Quality();
+        qualities[2] = getNo2Quality();
+        qualities[3] = getCoQuality();
+        qualities[4] = getO3Quality();
+        max = qualities[0];
+        for(int i = 1; i < qualities.length; i++)
+            if(qualities[i].ordinal() > max.ordinal())
+                max = qualities[i];
+        return max;
+    }
+
 
     public Integer getEstacion() {
         return estacion;

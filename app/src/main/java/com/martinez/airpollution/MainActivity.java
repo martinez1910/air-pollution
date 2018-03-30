@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.martinez.airpollution.logic.AirStation;
 
@@ -84,6 +85,49 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.mainLayout).setVisibility(View.VISIBLE);
     }
 
+    private void paintQualityCircles(){
+        ImageView imageView = null;
+        for(AirStation airStation : airStations){
+            switch(airStation.getEstacion()){
+                case 1:
+                    imageView = findViewById(R.id.imageViewCircleAvdaConstitucion);
+                    break;
+                case 2:
+                    imageView = findViewById(R.id.imageViewCircleAvdaArgentina);
+                    break;
+                case 10:
+                    imageView = findViewById(R.id.imageViewCircleMontevil);
+                    break;
+                case 3:
+                    imageView = findViewById(R.id.imageViewCircleHermanosFelgueroso);
+                    break;
+                case 4:
+                    imageView = findViewById(R.id.imageViewCircleAvdaCastilla);
+                    break;
+                case 11:
+                    imageView = findViewById(R.id.imageViewCircleSantaBarbara);
+                    break;
+            }
+            switch(airStation.getAverageAirQuality()){
+                case UNKNOWN:
+                    imageView.setImageResource(R.drawable.ic_circle_unknown);
+                    break;
+                case VERY_GOOD:
+                    imageView.setImageResource(R.drawable.ic_circle_very_good);
+                    break;
+                case GOOD:
+                    imageView.setImageResource(R.drawable.ic_circle_good);
+                    break;
+                case BAD:
+                    imageView.setImageResource(R.drawable.ic_circle_bad);
+                    break;
+                case VERY_BAD:
+                    imageView.setImageResource(R.drawable.ic_circle_very_bad);
+                    break;
+            }
+        }
+    }
+
 
     private class Communicator extends AsyncTask<String, Void, String>{
 
@@ -119,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+            paintQualityCircles();
             removeLoadingView();
         }
     }

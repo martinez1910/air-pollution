@@ -31,9 +31,11 @@ public class StationActivity extends AppCompatActivity {
 
 
     private void loadData(){
+        AirStation.Quality avgQuality = airStation.getAverageAirQuality();
+        ((ImageView) findViewById(R.id.imageViewCircle)).setImageResource(findCircleId(avgQuality));
         ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(getIntent().getIntExtra("pictureId", -1));
         ((TextView) findViewById(R.id.textViewStationName)).setText(getIntent().getStringExtra("name"));
-        ((TextView) findViewById(R.id.textViewAirQuality)).setText(getString(R.string.air_quality)+": " +getAverageAirQuality());
+        ((TextView) findViewById(R.id.textViewAirQuality)).setText(getString(R.string.air_quality)+": " +formatQuality(avgQuality));
 
         final List<Property> properties = new ArrayList<Property>();
         properties.add(new Property(getString(R.string.date), formatDate(airStation.getFechasolar_utc_())));
@@ -123,10 +125,33 @@ public class StationActivity extends AppCompatActivity {
         return "";
     }
 
-
-    private String getAverageAirQuality(){
-        return getString(R.string.air_quality_unknown);
+    private String formatQuality(AirStation.Quality quality){
+        switch (quality){
+            case VERY_GOOD:
+                return getString(R.string.air_quality_very_good);
+            case GOOD:
+                return getString(R.string.air_quality_good);
+            case BAD:
+                return getString(R.string.air_quality_bad);
+            case VERY_BAD:
+                return getString(R.string.air_quality_very_bad);
+            default:
+                return getString(R.string.air_quality_unknown);
+        }
     }
 
-
+    private int findCircleId(AirStation.Quality quality){
+        switch (quality){
+            case VERY_GOOD:
+                return R.drawable.ic_circle_very_good;
+            case GOOD:
+                return R.drawable.ic_circle_good;
+            case BAD:
+                return R.drawable.ic_circle_bad;
+            case VERY_BAD:
+                return R.drawable.ic_circle_very_bad;
+            default:
+                return R.drawable.ic_circle_unknown;
+        }
+    }
 }

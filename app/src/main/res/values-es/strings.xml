@@ -34,13 +34,14 @@
 
     <!-- Station -->
     <string name="air_quality">Calidad del Aire</string>
+    <string name="air_quality_very_good">Muy Buena</string>
     <string name="air_quality_good">Buena</string>
-    <string name="air_quality_poor">Media</string>
     <string name="air_quality_bad">Mala</string>
+    <string name="air_quality_very_bad">Muy Mala</string>
     <string name="air_quality_unknown">Desconocida</string>
 
     <string name="location">Ubicación</string>
-    <string name="location_message">Pulse aquí para verla en Google map</string>
+    <string name="location_message">Pulse aquí para verla en Google Maps</string>
 
     <!-- Wind Direction -->
     <string name="south_west">SO</string>
