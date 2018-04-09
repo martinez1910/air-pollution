@@ -14,7 +14,10 @@ import com.martinez.airpollution.logic.AirStation;
 import com.martinez.airpollution.logic.Property;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 public class StationActivity extends AppCompatActivity {
 
@@ -104,8 +107,22 @@ public class StationActivity extends AppCompatActivity {
             String hour = date.substring(11, 13);
             String minute = date.substring(14, 16);
 
-            return day +"/" +month +"/" +year + " " +getString(R.string.text_before_time) +" " +hour +":" +minute;
-        }catch(IndexOutOfBoundsException e){
+            Date dateObject = new Date(Integer.parseInt(year)-1900, Integer.parseInt(month)-1, Integer.parseInt(day), Integer.parseInt(hour), Integer.parseInt(minute));
+            dateObject = new Date(dateObject.getTime() - TimeZone.getTimeZone("Europe/Madrid").getRawOffset()); //Date has GMT+0 TimeZone
+            if(TimeZone.getTimeZone("Europe/Madrid").inDaylightTime(dateObject)){
+                Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Europe/Madrid"));
+                calendar.setTime(dateObject);
+                calendar.add(Calendar.HOUR_OF_DAY, 1);
+                dateObject = calendar.getTime();
+            }
+            dateObject = new Date(dateObject.getTime() + TimeZone.getTimeZone("Europe/Madrid").getRawOffset());
+
+            return (dateObject.getDate() < 10 ? "0"+dateObject.getDate() : dateObject.getDate()) +"/"
+                    +((dateObject.getMonth()+1) < 10 ? "0"+(dateObject.getMonth()+1) : (dateObject.getMonth()+1)) +"/"
+                    +(dateObject.getYear()+1900) + " " +getString(R.string.text_before_time) +" "
+                    +(dateObject.getHours() < 10 ? "0"+dateObject.getHours() : dateObject.getHours()) +":"
+                    +(dateObject.getMinutes() < 10 ? "0"+dateObject.getMinutes() : dateObject.getMinutes());
+        }catch(IndexOutOfBoundsException | NumberFormatException e){
             return date;
         }
     }
