@@ -35,7 +35,7 @@
     <string name="humidity_unit">%</string>
     <string name="pressure_unit">hPa</string>
     <string name="wind_direction_unit">º</string>
-    <string name="wind_speed_unit">m/s</string>
+    <string name="wind_speed_unit">km/h</string>
     <string name="solar_radiation_unit">W/m²</string>
     <string name="precipitation_unit">l/m²</string>
     <string name="no_data">No Data</string>

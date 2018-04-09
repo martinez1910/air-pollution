@@ -46,13 +46,13 @@ public class StationActivity extends AppCompatActivity {
         if(!Double.isNaN(airStation.getTmp()))
             properties.add(new Property(getString(R.string.tmp), airStation.getTmp().toString() +" " +getString(R.string.temperature_unit)));
         if(!Double.isNaN(airStation.getLl()))
-            properties.add(new Property(getString(R.string.ll), airStation.getLl().toString()+" " +getString(R.string.precipitation_unit)));
+            properties.add(new Property(getString(R.string.ll), airStation.getLl().toString() +" " +getString(R.string.precipitation_unit)));
         if(!Double.isNaN(airStation.getDd()))
-            properties.add(new Property(getString(R.string.dd), airStation.getDd().toString()+" " +getString(R.string.wind_direction_unit) +" (" +formatWindDirection(airStation.getDd()) +")"));
+            properties.add(new Property(getString(R.string.dd), airStation.getDd().toString( )+" " +getString(R.string.wind_direction_unit) +" (" +formatWindDirection(airStation.getDd()) +")"));
         if(!Double.isNaN(airStation.getVv()))
-            properties.add(new Property(getString(R.string.vv), airStation.getVv().toString()+" " +getString(R.string.wind_speed_unit)));
+            properties.add(new Property(getString(R.string.vv), (airStation.getVv().doubleValue()*3.6) +" " +getString(R.string.wind_speed_unit)));
         if(!Double.isNaN(airStation.getRs()))
-            properties.add(new Property(getString(R.string.rs), airStation.getRs().toString()+" " +getString(R.string.solar_radiation_unit)));
+            properties.add(new Property(getString(R.string.rs), airStation.getRs().toString() +" " +getString(R.string.solar_radiation_unit)));
         if(!Double.isNaN(airStation.getHr()))
             properties.add(new Property(getString(R.string.hr), airStation.getHr().toString() +" " +getString(R.string.humidity_unit)));
         if(!Double.isNaN(airStation.getPrb()))
