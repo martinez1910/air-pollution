@@ -42,13 +42,13 @@
 
 
     <!-- Main -->
+    <string name="loading">Retrieving latest hour data...</string>
     <string name="station_avenida_constitucion">Avenida Constitución</string>
     <string name="station_avenida_argentina">Avenida Argentina</string>
     <string name="station_montevil">Montevil</string>
     <string name="station_hermanos_felgueroso">Hermanos Felgueroso</string>
     <string name="station_avenida_castilla">Avenida Castilla</string>
     <string name="station_santa_barbara">Santa Bárbara</string>
-    <!--<string name="toast_loading">Loading...</string>-->
 
     <!-- Station -->
     <string name="air_quality">Air Quality</string>
