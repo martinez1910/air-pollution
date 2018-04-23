@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -28,8 +31,41 @@ public class StationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_station);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         airStation = (AirStation) getIntent().getSerializableExtra("airStation");
         loadData();
+    }
+
+    /*@Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }*/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_station, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            case R.id.menuHome:
+                finish();
+                break;
+            case R.id.menuInfo:
+                MainActivity.displayExplanationAlertDialog(this);
+                break;
+            case R.id.menuAbout:
+                MainActivity.displayAboutAlertDialog(this);
+                break;
+        }
+        return true;
     }
 
 

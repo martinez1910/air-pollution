@@ -1,8 +1,28 @@
 <resources>
-    <string name="app_name">Air Pollution Gijón</string>
+    <string name="app_name">Air Quality Gijón</string>
 
     <!--<string name="button">Update</string>-->
     <!--<string name="toast_updating">Retrieving latest hour data...</string>-->
+
+    <!-- Menu Items -->
+    <string name="menu_home_main">Refresh data</string>
+    <string name="menu_home_station">Home</string>
+    <string name="menu_info">Air quality levels info...</string>
+    <string name="menu_about">About Air Quality Gijón App...</string>
+    <!-- Menu AlertDialogs -->
+    <string name="menu_alert_dialog_ok">Ok</string>
+    <string name="menu_alert_dialog_info_title">Air Quality Levels Info</string>
+    <string name="menu_alert_dialog_info_message">
+        - Dark Green Circle: Very Good\n
+        - Light Green Circle: Good\n
+        - Yellow Circle: Bad\n
+        - Red Circle: Very Bad\n
+        \nThe total air quality level is the same one that the worst level of a single compound.
+        That means that if, for example, every compound has a \'very good\' level but one has a \'very bad\' one the total air quality is \'very bad\'.\n
+        \nIf the level of a given compound is \'bad\' that means that, according to the data provided by the city council, it is over the safe limits for health.
+    </string>
+    <string name="menu_alert_dialog_about_title">About Air Quality Gijón App</string>
+    <string name="menu_alert_dialog_about_message">App designed and implemented by Alejandro Martínez Remis.\n\nData provided by the City Council of Gijón (Asturias, Spain).</string>
 
     <!-- AirStationTypeX toString() -->
     <string name="station">Station</string>

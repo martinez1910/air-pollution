@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Calidad del aire en Gijón</string>
+    <string name="app_name">Calidad del Aire Gijón</string>
 
     <!--<string name="button">Actualizar</string>-->
+
+    <!-- Menu Items -->
+    <string name="menu_home_main">Actualizar datos</string>
+    <string name="menu_home_station">Inicio</string>
+    <string name="menu_info">Información sobre niveles de calidad...</string>
+    <string name="menu_about">Acerca de Calidad del Aire Gijón App...</string>
+    <!-- Menu AlertDialogs -->
+    <string name="menu_alert_dialog_ok">Vale</string>
+    <string name="menu_alert_dialog_info_title">Información sobre los niveles de calidad del aire</string>
+    <string name="menu_alert_dialog_info_message">
+        - Círculo Verde Oscuro: Muy Buena\n
+        - Círculo Verde Claro: Buena\n
+        - Círculo Amarillo: Mala\n
+        - Círculo Rojo: Muy Mala\n
+        \nEl nivel total de la calidad del aire es el mismo que el peor nivel de uno de los compuestos.
+        Esto significa que, por ejemplo, si cada compuesto tiene un nivel \'muy bueno\' pero uno de ellos tiene un nivel \'muy malo\' entonces el nivel de la calidad del aire total es \'muy mala\'.\n
+        \nSi el nivel de un compuesto es \'malo\' significa, de acuerdo con la información proporcionada por el ayuntamiento, está por encima de los límites seguros para la salud.
+    </string>
+    <string name="menu_alert_dialog_about_title">Acerda de Calidad del Aire Gijón App</string>
+    <string name="menu_alert_dialog_about_message">App diseñada e implementada por Alejandro Martínez Remis.\n\nInformación proporcionada por el Ayuntamiento de Gijón (Asturias, España).</string>
 
     <!-- AirStationTypeX toString() -->
     <string name="station">Estación</string>

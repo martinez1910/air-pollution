@@ -1,10 +1,15 @@
 package com.martinez.airpollution;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -31,6 +36,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getAirStationsData();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuHome:
+                updateData();
+                break;
+            case R.id.menuInfo:
+                displayExplanationAlertDialog(this);
+                break;
+            case R.id.menuAbout:
+                displayAboutAlertDialog(this);
+                break;
+        }
+        return true;
     }
 
     public void onImageClick(View w){
@@ -126,6 +153,31 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    private void updateData(){
+        setContentView(R.layout.activity_main);
+        getAirStationsData();
+    }
+
+    protected static void displayExplanationAlertDialog(Context context){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(R.string.menu_alert_dialog_info_title)
+                .setMessage(R.string.menu_alert_dialog_info_message)
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {}
+                })
+                .create().show();
+    }
+
+    protected static void displayAboutAlertDialog(Context context){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(R.string.menu_alert_dialog_about_title)
+                .setMessage(R.string.menu_alert_dialog_about_message)
+                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {}
+                })
+                .create().show();
     }
 
 
