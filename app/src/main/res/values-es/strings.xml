@@ -58,7 +58,7 @@
 
 
     <!-- Station -->
-    <string name="air_quality">Calidad del Aire</string>
+    <string name="air_quality">Calidad media del aire</string>
     <string name="air_quality_very_good">Muy Buena</string>
     <string name="air_quality_good">Buena</string>
     <string name="air_quality_bad">Mala</string>

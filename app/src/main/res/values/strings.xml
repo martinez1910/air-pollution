@@ -71,7 +71,7 @@
     <string name="station_santa_barbara">Santa Bárbara</string>
 
     <!-- Station -->
-    <string name="air_quality">Air Quality</string>
+    <string name="air_quality">Average air quality</string>
     <string name="air_quality_very_good">Very Good</string>
     <string name="air_quality_good">Good</string>
     <string name="air_quality_bad">Bad</string>

@@ -70,11 +70,7 @@ public class StationActivity extends AppCompatActivity {
 
 
     private void loadData(){
-        AirStation.Quality avgQuality = airStation.getAverageAirQuality();
-        ((ImageView) findViewById(R.id.imageViewCircle)).setImageResource(findCircleId(avgQuality));
-        ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(getIntent().getIntExtra("pictureId", -1));
-        ((TextView) findViewById(R.id.textViewStationName)).setText(getIntent().getStringExtra("name"));
-        ((TextView) findViewById(R.id.textViewAirQuality)).setText(getString(R.string.air_quality)+": " +formatQuality(avgQuality));
+        loadQuality();
 
         final List<Property> properties = new ArrayList<Property>();
         properties.add(new Property(getString(R.string.date), formatDate(airStation.getFechasolar_utc_())));
@@ -132,6 +128,34 @@ public class StationActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void loadQuality(){
+        AirStation.Quality avgQuality = airStation.getAverageAirQuality();
+        ((ImageView) findViewById(R.id.imageViewCircle)).setImageResource(findCircleId(avgQuality));
+        ((ImageView) findViewById(R.id.imageViewPicture)).setImageResource(getIntent().getIntExtra("pictureId", -1));
+        ((TextView) findViewById(R.id.textViewStationName)).setText(getIntent().getStringExtra("name"));
+
+        String str = getString(R.string.air_quality)+": " +formatQuality(avgQuality) +"\n";
+        AirStation.Quality[] qualities = new AirStation.Quality[5];
+        qualities[0] = airStation.getPm10Quality();
+        qualities[1] = airStation.getSo2Quality();
+        qualities[2] = airStation.getNo2Quality();
+        qualities[3] = airStation.getCoQuality();
+        qualities[4] = airStation.getO3Quality();
+        String[] qualitiesNames = new String[5];
+        qualitiesNames[0] = getString(R.string.pm10);
+        qualitiesNames[1] = getString(R.string.so2);
+        qualitiesNames[2] = getString(R.string.no2);
+        qualitiesNames[3] = getString(R.string.co);
+        qualitiesNames[4] = getString(R.string.o3);
+
+        for(int i = 0; i < qualities.length; i++)
+            if(!qualities[i].equals(AirStation.Quality.UNKNOWN))
+                str += "\n" +qualitiesNames[i] +": " +formatQuality(qualities[i]);
+
+
+        ((TextView) findViewById(R.id.textViewAirQuality)).setText(str);
     }
 
 
