@@ -305,10 +305,7 @@
                         android:textColor="@color/mainHeaderTextColor"
                         android:textSize="18sp" />
                 </LinearLayout>
-
             </LinearLayout>
-
         </LinearLayout>
     </LinearLayout>
-
 </ScrollView>
