@@ -13,6 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.martinez.airpollution.logic.AirStation;
 
 import org.json.JSONArray;
@@ -29,11 +33,15 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<AirStation> airStations;
+    private InterstitialAd mInterstitialAd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        loadAndShowAdd();
 
         getAirStationsData();
     }
@@ -218,5 +226,18 @@ public class MainActivity extends AppCompatActivity {
             paintQualityCircles();
             removeLoadingView();
         }
+    }
+
+    private void loadAndShowAdd(){
+        MobileAds.initialize(this, "ca-app-pub-4089820538335474~4017753400");
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-4089820538335474/2715731281");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                mInterstitialAd.show();
+            }
+        });
     }
 }
